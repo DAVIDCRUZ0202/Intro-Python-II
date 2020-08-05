@@ -71,13 +71,33 @@ while True:
 
 
 
-    # elif command[0] == 's':
-    #     player.location.s_to 
-        # we were in the foyer, then went south
+    elif command[0] == 's':
+    #     # check if the player can move in the desired direction
+        if player.location == room['foyer'] or player.location == room['overlook'] or player.location == room['treasure']:
+        #     # if player can move, set the room located in that direction as the players location
+            player.location = player.location.s_to
+            # if it's a dead end, let the player know
+        else:
+            print("DEAD END")
 
-    # elif command[0] == 'e':
 
-    # elif command[0] == 'w':
+    elif command[0] == 'e':
+            #     # check if the player can move in the desired direction
+        if player.location == room['foyer']:
+        #     # if player can move, set the room located in that direction as the players location
+            player.location = player.location.e_to
+            # if it's a dead end, let the player know
+        else:
+            print("DEAD END")
+
+    elif command[0] == 'w':
+            #     # check if the player can move in the desired direction
+        if player.location == room['narrow']:
+        #     # if player can move, set the room located in that direction as the players location
+            player.location = player.location.w_to
+            # if it's a dead end, let the player know
+        else:
+            print("DEAD END")
 
     else:
         print(f"ERROR:{command[0]} not valid. For a list of valid commands, enter ""h"". Try Again! ")
