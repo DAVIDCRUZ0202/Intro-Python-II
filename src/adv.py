@@ -1,10 +1,11 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
 room = {
     'outside':  Room("Outside Cave Entrance",
-                     "North of you, the cave mount beckons"),
+                     "North of you, the cave mount beckons."),
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
 passages run north and east."""),
@@ -38,14 +39,39 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-
+player = Player(location=room['outside'])
 # Write a loop that:
 #
+while True:
 # * Prints the current room name
 # * Prints the current description (the textwrap module might be useful here).
+    print(player.location)
 # * Waits for user input and decides what to do.
 #
+    command = input("Enter a Command> ").split(',')
 # If the user enters a cardinal direction, attempt to move to the room there.
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+    if command[0] == 'q':
+        break
+
+    elif command[0] == 'h':
+        print(" ""q"" to quit. n to move north. s to move south. w to move west. e to move east.")
+    
+    # elif command[0] == 'n':
+
+    #     # check if the player can move in the desired direction
+    #     # if player can move, set the room located in that direction as the players location
+
+
+
+    # elif command[0] == 's':
+
+    # elif command[0] == 'e':
+
+    # elif command[0] == 'w':
+
+    else:
+        print(f"ERROR:{command[0]} not valid. For a list of valid commands, enter ""h"". Try Again! ")
