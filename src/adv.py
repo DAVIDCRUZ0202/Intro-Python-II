@@ -60,11 +60,14 @@ while True:
     elif command[0] == 'h':
         print(" ""q"" to quit. n to move north. s to move south. w to move west. e to move east.")
     
-    # elif command[0] == 'n':
-    #     player.location.n_to
-
+    elif command[0] == 'n':
     #     # check if the player can move in the desired direction
-    #     # if player can move, set the room located in that direction as the players location
+        if player.location == room['outside'] or player.location == room['foyer'] or player.location == room['narrow']:
+        #     # if player can move, set the room located in that direction as the players location
+            player.location = player.location.n_to
+            # if it's a dead end, let the player know
+        else:
+            print("DEAD END")
 
 
 
