@@ -61,6 +61,7 @@ while True:
         print(" ""q"" to quit. n to move north. s to move south. w to move west. e to move east.")
     
     # elif command[0] == 'n':
+    #     player.location.n_to
 
     #     # check if the player can move in the desired direction
     #     # if player can move, set the room located in that direction as the players location
@@ -68,6 +69,8 @@ while True:
 
 
     # elif command[0] == 's':
+    #     player.location.s_to 
+        # we were in the foyer, then went south
 
     # elif command[0] == 'e':
 
